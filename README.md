@@ -10,11 +10,13 @@ To obtain an estimated time of a hike, call the server with a post request direc
     completion_time = response.json()['completion_time']
 
 Obtaining the difficulty is very similar. The post request is directed to /estimated_difficulty, and the JSON only includes the distance and elevation gain.
+    
     elevation = 2000
     distance = 1
     data2 = {'distance': distance, 'elevation_gain': elevation_gain}
     response = requests.post(microA_server + 'estimated_difficulty', json=data2)
     difficulty = response.json()['difficulty']
+
 
 The response is in the same line of code as the request, and comes in the form of a JSON. The desired property can be extracted from the JSON, for example in the completion_time = response.json()[‘completion_time’] statement. 
 
